@@ -1,4 +1,6 @@
 public class Temperatura {
+
+    /**Valore della temperatura in gradi celsius */
     protected double valoreCelsius;
 
     /**
@@ -11,9 +13,10 @@ public class Temperatura {
     
     /**
      * Restituisce il valore attuale della temperatura in gradi Celsius.
-     * @return il valore della temperatura in gradi celsius
+     * @return il valore della temperatura in gradi celsius 
      */
     public double getValoreCelsius() {
+
         return valoreCelsius;
     }
 
@@ -41,26 +44,32 @@ public class Temperatura {
         this.valoreCelsius = this.valoreCelsius - val;
     }
 
-    /**
-     * 
-     * @return il valore in kelvin della temperatura
+   /**
+     * Restituisce il valore attuale della temperatura in gradi kelvin.
+     * @return il valore della temperatura in gradi celsius 
      */
     public double inKelvin(){
         double Kelvin = this.valoreCelsius;
-        Kelvin = 274.15 * this.valoreCelsius;
+        Kelvin = 273.15 + this.valoreCelsius;
         return Kelvin;
     }
     
     /**
-     * 
-     * @return il valore della temperatura in Fahrenheit
+     * Restituisce il valore attuale della temperatura in gradi Fahrenheit
+     * @return restituisce il valore della temperatura in Fahrenheit
      */
     public double inFahrenheit(){
         double valFahrenheit = this.valoreCelsius;
-        valFahrenheit = 33.8 * this.valoreCelsius;
+        valFahrenheit = (this.valoreCelsius*9/5)+32;
         return valFahrenheit;
     }
 
+    /**
+     * restituisce una rappresentazione testuale della temperatura
+     * <p>
+     * <b> ESEMPIO:</b> Temperatura: 2.0°C 35.6°F 275.15°K
+     * @return una rappresentazione testuale della temperatura 
+     */
     @Override
     public String toString() {
         // TODO Auto-generated method stub
